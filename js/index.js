@@ -398,10 +398,11 @@
   var role = $("#role");
   if (role && !A.RM) {
     var roles = [
-        "Creative Developer",
-        "Interaction Designer",
-        "Frontend Engineer",
+        "Hamba Tuhan",
+        "Frontend Developer",
+        "Video Editor",
         "Motion Designer",
+        "Graphic Designer ",
       ],
       ri = 0;
     A.onReady(function () {
