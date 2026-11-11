@@ -678,21 +678,21 @@
       tx: 0.42,
       tz: 0.15,
       sp: 0.42,
-      nodes: ["React", "WebGL", "Next.js"],
+      nodes: ["HTML", "CSS", "Javascript"],
     },
     {
       r: 1.68,
       tx: -0.95,
       tz: 0.55,
       sp: -0.3,
-      nodes: ["UI", "Motion", "3D", "API"],
+      nodes: ["Designer", "Node.Js", "Next.Js", "Vue.Js"],
     },
     {
       r: 1.96,
       tx: 0.2,
       tz: -0.75,
       sp: 0.2,
-      nodes: ["Figma", "Node", "TS"],
+      nodes: ["Editor", "Developer", "Hamba Tuhan"],
     },
   ];
   rings.forEach(function (g) {
