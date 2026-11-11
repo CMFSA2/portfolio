@@ -1,0 +1,721 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <title>Portofolio Christian</title>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <meta
+      name="description"
+      content="Portofolio Christian, frontend developer dan video editor di Bengkulu."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <!-- ===== PRELOADER ===== -->
+    <div class="pre" id="pre" aria-hidden="true">
+      <div class="pre__half pre__half--t"></div>
+      <div class="pre__half pre__half--b"></div>
+      <div class="pre__bar" id="preBar"></div>
+      <div class="pre__in">
+        <div class="pre__top mono">
+          <span>Christian M.F Simarmata</span><span>Portofolio 2026</span>
+        </div>
+        <div class="pre__word"><span id="preWord">Halo</span><i>.</i></div>
+        <div class="pre__bot">
+          <span class="mono">Memuat pengalaman</span
+          ><span class="pre__num" id="preNum">000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== KURSOR, PROGRES, LATAR ===== -->
+    <div class="cur" id="cur" aria-hidden="true"></div>
+    <div class="cur-ring" id="curRing" aria-hidden="true"><span></span></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <canvas id="field" aria-hidden="true"></canvas>
+
+    <!-- ===== NAVIGASI ===== -->
+    <header class="nav" id="nav">
+      <div class="wrap nav__in">
+        <a class="logo" href="#top" aria-label="Christian Simarmata, ke atas"
+          ><span class="logo__mark">CS</span><span>Christian Simarmata</span></a
+        >
+        <nav class="nav__links" aria-label="Navigasi utama">
+          <a href="#tentang" data-scramble data-spy="tentang">Tentang</a>
+          <a href="#keahlian" data-scramble data-spy="keahlian">Keahlian</a>
+          <a href="#proyek" data-scramble data-spy="proyek">Proyek</a>
+          <a href="#pengalaman" data-scramble data-spy="pengalaman"
+            >Pengalaman</a
+          >
+          <a href="#kontak" data-scramble data-spy="kontak">Kontak</a>
+        </nav>
+        <div class="nav__tools">
+          <button
+            class="icon-btn theme"
+            id="themeBtn"
+            type="button"
+            data-mode="light"
+            aria-label="Ganti tema terang atau gelap"
+          >
+            <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn burger"
+            id="burger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu"
+            aria-label="Buka menu"
+          >
+            <i></i><i></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu" id="menu" aria-hidden="true">
+      <a class="menu__l" href="#tentang"><span style="--i: 0">Tentang</span></a>
+      <a class="menu__l" href="#keahlian"
+        ><span style="--i: 1">Keahlian</span></a
+      >
+      <a class="menu__l" href="#proyek"><span style="--i: 2">Proyek</span></a>
+      <a class="menu__l" href="#pengalaman"
+        ><span style="--i: 3">Pengalaman</span></a
+      >
+      <a class="menu__l" href="#kontak"><span style="--i: 4">Kontak</span></a>
+      <div class="menu__foot mono">
+        <span>Bengkulu, ID</span><span data-clock>--:--:--</span>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <main class="page">
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="top" aria-label="Pengantar">
+        <div class="wrap hero__grid">
+          <div class="hero__copy" id="heroCopy">
+            <div class="status mono" data-reveal style="--base: 250ms">
+              <i></i>Terbuka untuk proyek mulai Jan 2026
+            </div>
+            <h1 class="hero__name" aria-label="Christian Simarmata">
+              <span class="ln ln--1" data-split="chars" style="--base: 350ms"
+                >Christian</span
+              >
+              <span class="ln ln--2" data-split="chars" style="--base: 550ms"
+                >Simarmata</span
+              >
+            </h1>
+            <p class="hero__role" data-reveal style="--base: 900ms">
+              <span>Saya seorang</span><b id="role">Creative Developer</b
+              ><i class="caret" aria-hidden="true"></i>
+            </p>
+            <p class="lead hero__lead" data-reveal style="--base: 1000ms">
+              Saya merancang dan membangun antarmuka web yang terasa hidup:
+              cepat dimuat, mudah diakses, dan bergerak dengan alasan. Dua tahun
+              terakhir saya merilis produk untuk Gereja, dan Organisasi.
+            </p>
+            <div class="hero__cta" data-reveal style="--base: 1100ms">
+              <a class="btn btn--primary" href="#proyek" data-magnet
+                ><span class="btn__t"
+                  >Lihat karya
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7M8 7h9v9" /></svg></span
+              ></a>
+              <a class="btn" href="#kontak" data-magnet
+                ><span class="btn__t">Hubungi saya</span></a
+              >
+            </div>
+            <div class="hero__meta mono" data-reveal style="--base: 1200ms">
+              <span>Bengkulu, ID · <b data-clock>--:--:--</b> WIB</span>
+              <span>Balasan <b>&lt; 24 jam</b></span>
+            </div>
+          </div>
+          <figure class="hero__orb" data-reveal="scale" style="--base: 500ms">
+            <canvas
+              id="orb"
+              role="img"
+              aria-label="Globe partikel 3D dengan tiga orbit berisi nama teknologi yang saya pakai"
+            ></canvas>
+            <figcaption class="mono">Tarik untuk memutar</figcaption>
+          </figure>
+        </div>
+        <div class="scrollcue mono" aria-hidden="true">
+          <span>Gulir</span><i></i>
+        </div>
+      </section>
+
+      <!-- ===== TENTANG ===== -->
+      <section class="sec about" id="tentang">
+        <div class="wrap">
+          <div class="sec__head">
+            <span class="eyebrow" data-reveal>Tentang saya</span>
+          </div>
+          <div class="about__grid">
+            <p class="about__text" id="aboutText">
+              Saya percaya antarmuka terbaik terasa seperti jawaban, bukan
+              dekorasi. Setiap animasi yang saya buat punya tugas:
+              <span class="acc">menunjukkan hubungan antarelemen</span>,
+              menenangkan waktu tunggu, atau mengarahkan mata. Saya bekerja di
+              perbatasan desain dan rekayasa, dari desain manual sampai
+              <span class="acc">kode produksi yang lulus audit performa</span>.
+            </p>
+            <aside class="idcard" data-reveal="left" style="--d: 1">
+              <div class="idcard__in" data-tilt>
+                <div class="idcard__glare"></div>
+                <div class="idcard__top mono">
+                  <span>Kartu kreator</span><span>GMT+7</span>
+                </div>
+                <div class="idcard__mono">
+                  <canvas data-art="dots" aria-hidden="true"></canvas><b>CS</b>
+                </div>
+                <dl class="mono">
+                  <div>
+                    <dt>Basis</dt>
+                    <dd>Bengkulu, ID</dd>
+                  </div>
+                  <div>
+                    <dt>Fokus</dt>
+                    <dd>Web Developer, dan Editor Video</dd>
+                  </div>
+                  <div>
+                    <dt>Bahasa</dt>
+                    <dd>Indonesia, English</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>Menerima kontrak</dd>
+                  </div>
+                </dl>
+              </div>
+            </aside>
+          </div>
+          <div class="stats" data-reveal>
+            <div class="stat">
+              <div class="stat__n">
+                <span data-count="2">2</span><small>th</small>
+              </div>
+              <p>membangun produk web untuk produksi</p>
+            </div>
+            <div class="stat">
+              <div class="stat__n">
+                <span data-count="48">2</span><small>+</small>
+              </div>
+              <p>proyek dirilis, dari situs gereja sampai organisasi</p>
+            </div>
+            <div class="stat">
+              <div class="stat__n">
+                <span data-count="3">3</span><small>+</small>
+              </div>
+              <p>Pelayanan di berbagai tempat, pedalaman maupun kota</p>
+            </div>
+            <div class="stat">
+              <div class="stat__n">
+                <span data-count="10">10</span><small>+</small>
+              </div>
+              <p>proyek video dibuat, dari opener sampai video pendek</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== KEAHLIAN ===== -->
+      <section class="sec skills" id="keahlian">
+        <div class="wrap">
+          <div class="sec__head">
+            <span class="eyebrow" data-reveal>Keahlian</span>
+            <h2 class="h2" data-split="words">
+              Alat yang saya <em>kuasai,</em> bukan sekadar kenal.
+            </h2>
+          </div>
+        </div>
+
+        <div class="skills__rows" aria-hidden="true">
+          <div class="marq" data-marq="-1">
+            <div class="marq__track">
+              <div class="marq__item">
+                <span>JavaScript</span><span>HTML</span><span>CSS</span
+                ><span>Adobe Premiere Pro</span><span>Adobe After Effect</span
+                ><span>Adobe Photoshop</span><span>Maxon Cinema 4D</span>
+              </div>
+            </div>
+          </div>
+          <div class="marq marq--out" data-marq="1">
+            <div class="marq__track">
+              <div class="marq__item">
+                <span>Design System</span><span>Video Editor</span
+                ><span>Preacher</span><span>Mobilitas</span><span>Performa</span
+                ><span>Detail</span><span>Konsisten</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <div class="caps">
+            <article class="cap" data-reveal data-spot style="--d: 0">
+              <div class="cap__top">
+                <h3>Antarmuka &amp; sistem desain</h3>
+                <div class="ring" style="--len: 276.46; --v: 0.88">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle class="bg" cx="50" cy="50" r="44" />
+                    <circle class="fg" cx="50" cy="50" r="44" /></svg
+                  ><b>3<small>th</small></b>
+                </div>
+              </div>
+              <p>
+                Komponen yang konsisten, teruji, dan bisa dipakai tim lain tanpa
+                membaca kode saya.
+              </p>
+              <ul class="chips">
+                <li class="chip">HTML</li>
+                <li class="chip">CSS</li>
+                <li class="chip">Javascript</li>
+                <li class="chip">Next.js</li>
+                <li class="chip">Vue.js</li>
+              </ul>
+            </article>
+            <article class="cap" data-reveal data-spot style="--d: 1">
+              <div class="cap__top">
+                <h3>Video Editor</h3>
+                <div class="ring" style="--len: 276.46; --v: 0.66">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle class="bg" cx="50" cy="50" r="44" />
+                    <circle class="fg" cx="50" cy="50" r="44" /></svg
+                  ><b>5<small>th</small></b>
+                </div>
+              </div>
+              <p>
+                Editing video dan animasi di perangkat menengah, sesuai dengan
+                permintaan dan kebutuhan klien.
+              </p>
+              <ul class="chips">
+                <li class="chip">Adobe Premiere Pro</li>
+                <li class="chip">Adobe After Effect</li>
+                <li class="chip">Adobe Photoshop</li>
+                <li class="chip">Maxon Cinema 4D</li>
+              </ul>
+            </article>
+            <article class="cap" data-reveal data-spot style="--d: 2">
+              <div class="cap__top">
+                <h3>Hamba Tuhan</h3>
+                <div class="ring" style="--len: 276.46; --v: 0.75">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle class="bg" cx="50" cy="50" r="44" />
+                    <circle class="fg" cx="50" cy="50" r="44" /></svg
+                  ><b>6<small>th</small></b>
+                </div>
+              </div>
+              <p>
+                Cukup paham pengajaran kepada jemaat dan sesama hamba Tuhan, dan
+                cukup mendalami doktrin dan filsafat.
+              </p>
+              <ul class="chips">
+                <li class="chip">Bibleworks</li>
+                <li class="chip">Sejarah</li>
+                <li class="chip">Doktrin</li>
+                <li class="chip">Filsafat</li>
+                <li class="chip">Etika</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROYEK ===== -->
+      <section class="work" id="proyek">
+        <div class="wrap">
+          <div class="sec__head">
+            <span class="eyebrow" data-reveal>Karya pilihan</span>
+            <h2 class="h2" data-split="words">
+              Proyek yang <em>bergerak.</em>
+            </h2>
+            <p class="lead" data-reveal>
+              Gulir ke bawah dan reel akan bergeser ke samping. Arahkan kursor
+              ke kartu untuk memiringkannya.
+            </p>
+          </div>
+        </div>
+
+        <div class="reel" id="reel">
+          <div class="reel__stick">
+            <div class="wrap">
+              <div class="reel__bar mono" aria-hidden="true">
+                <span>Proyek</span>
+                <div class="reel__line"><i id="reelFill"></i></div>
+                <span class="reel__count" id="reelCount">1 / 5</span>
+              </div>
+            </div>
+            <div class="reel__track" id="track">
+              <article class="card">
+                <div class="card__in" data-tilt data-cursor="Lihat">
+                  <div class="card__art">
+                    <canvas data-art="flow" aria-hidden="true"></canvas
+                    ><span class="card__year mono">2026</span
+                    ><span class="card__metric">Website</span>
+                    <div class="card__glare"></div>
+                  </div>
+                  <div class="card__body">
+                    <h3>GKII Tebeng</h3>
+                    <p>
+                      Website Gereja yang dapat diakses oleh semua orang, dengan
+                      informasi penting dan terbaru tentang GKII Tebeng.
+                    </p>
+                    <a
+                      class="card__go"
+                      href="#kontak"
+                      aria-label="Diskusikan proyek serupa Tera"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" /></svg
+                    ></a>
+                    <div class="card__tags">
+                      <span>HTML</span><span>CSS</span><span>Javascript</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__in" data-tilt data-cursor="Lihat">
+                  <div class="card__art">
+                    <canvas data-art="city" aria-hidden="true"></canvas
+                    ><span class="card__year mono">2025</span
+                    ><span class="card__metric">Website</span>
+                    <div class="card__glare"></div>
+                  </div>
+                  <div class="card__body">
+                    <h3>Ikatan Alumni Institut Injil Indonesia</h3>
+                    <p>
+                      Website Organisasi yang dapat diakses oleh semua orang,
+                      dengan informasi penting dan terbaru tentang Ikatan Alumni
+                      Institut Injil Indonesia.
+                    </p>
+                    <a
+                      class="card__go"
+                      href="#kontak"
+                      aria-label="Diskusikan proyek serupa Pasar Kita"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" /></svg
+                    ></a>
+                    <div class="card__tags">
+                      <span>HTML</span><span>CSS</span><span>Javascript</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__in" data-tilt data-cursor="Lihat">
+                  <div class="card__art">
+                    <canvas data-art="atlas" aria-hidden="true"></canvas
+                    ><span class="card__year mono">2024</span
+                    ><span class="card__metric">Video</span>
+                    <div class="card__glare"></div>
+                  </div>
+                  <div class="card__body">
+                    <h3>PKBM Mahakarya</h3>
+                    <p>
+                      Video PKBM Mahakarya dalam rangka merayakan kemerdekaan
+                      Republik Indonesia.
+                    </p>
+                    <a
+                      class="card__go"
+                      href="#kontak"
+                      aria-label="Diskusikan proyek serupa Lumen Atlas"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" /></svg
+                    ></a>
+                    <div class="card__tags">
+                      <span>Adobe Premiere Pro</span
+                      ><span>Adobe After Effect</span
+                      ><span>Adobe Photoshop</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__in" data-tilt data-cursor="Lihat">
+                  <div class="card__art">
+                    <canvas data-art="morph" aria-hidden="true"></canvas
+                    ><span class="card__year mono">2023</span
+                    ><span class="card__metric">Video</span>
+                    <div class="card__glare"></div>
+                  </div>
+                  <div class="card__body">
+                    <h3>Opening KTN YPPII</h3>
+                    <p>
+                      Video opening KTN YPPII 2023 dalam rangka membuka ibadah
+                      Kegiatan Tahunan Nasional Yayasan Pelayanan Pekabaran
+                      Injil Indonesia (YPPII) Batu.
+                    </p>
+                    <a
+                      class="card__go"
+                      href="#kontak"
+                      aria-label="Diskusikan proyek serupa Sarana"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" /></svg
+                    ></a>
+                    <div class="card__tags">
+                      <span>Adobe After Effect</span><span>Maxon Cinema 4D</span
+                      ><span>Adobe Premiere Pro</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__in" data-tilt data-cursor="Lihat">
+                  <div class="card__art">
+                    <canvas data-art="ridge" aria-hidden="true"></canvas
+                    ><span class="card__year mono">2023</span
+                    ><span class="card__metric">Video</span>
+                    <div class="card__glare"></div>
+                  </div>
+                  <div class="card__body">
+                    <h3>Opening Seminar</h3>
+                    <p>
+                      Video opening seminar di Institut Injil Indonesia Batu.
+                    </p>
+                    <a
+                      class="card__go"
+                      href="#kontak"
+                      aria-label="Diskusikan proyek serupa Gema"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" /></svg
+                    ></a>
+                    <div class="card__tags">
+                      <span>Adobe Premiere Pro</span
+                      ><span>Adobe After Effect</span
+                      ><span>Adobe Photoshop</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <div class="reel__end">
+                <h3>Masih ada lagi.</h3>
+                <p class="lead">
+                  Beberapa proyek terikat perjanjian kerahasiaan. Saya tidak
+                  bisa membahasnya langsung.
+                </p>
+                <div>
+                  <a class="btn btn--primary" href="#kontak" data-magnet
+                    ><span class="btn__t">Ceritakan proyek Anda</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PENGALAMAN ===== -->
+      <section class="sec" id="pengalaman">
+        <div class="wrap">
+          <div class="sec__head">
+            <span class="eyebrow" data-reveal>Pengalaman</span>
+            <h2 class="h2" data-split="words">
+              Tiga tahun, <em>empat</em> tempat kerja.
+            </h2>
+          </div>
+          <div class="tl" id="tl">
+            <div class="tl__rail" aria-hidden="true">
+              <div class="tl__fill" id="tlFill"></div>
+            </div>
+
+            <article class="tl__item" data-reveal>
+              <div class="tl__when mono">2023 sampai kini</div>
+              <div class="tl__body">
+                <h3>Video Editor <span>Studio Sentosa</span></h3>
+                <p>
+                  Memproduksi video opening, video pendek, video ibadah dengan
+                  kekonsistenan dan detail untuk mendapat hasil yang terbaik.
+                </p>
+                <ul>
+                  <li>Video</li>
+                  <li>Konsisten</li>
+                  <li>Detail</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tl__item" data-reveal>
+              <div class="tl__when mono">2025 sampai 2026</div>
+              <div class="tl__body">
+                <h3>Frontend Developer <span>GKII Tebeng</span></h3>
+                <p>
+                  Membangun website Gereja yang dapat diakses oleh semua orang.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tl__item" data-reveal>
+              <div class="tl__when mono">2025 sampai 2026</div>
+              <div class="tl__body">
+                <h3>
+                  Frontend Developer
+                  <span>Ikatan Alumni Institut Injil Indonesia</span>
+                </h3>
+                <p>
+                  Membangun website Ikatan Alumni Institut Injil Indonesia yang
+                  dapat diakses oleh semua orang.
+                </p>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tl__item" data-reveal>
+              <div class="tl__when mono">2025 sampai 2026</div>
+              <div class="tl__body">
+                <h3>
+                  Developer Magang &amp; Lepas <span>Berbagai klien</span>
+                </h3>
+                <p>
+                  Mengerjakan situs sederhana sambil belajar dasar: HTML yang
+                  benar, CSS yang bisa dirawat, dan komunikasi yang jelas dengan
+                  klien.
+                </p>
+                <ul>
+                  <li>HTML &amp; CSS</li>
+                  <li>Javascript</li>
+                  <li>Klien langsung</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== KONTAK ===== -->
+      <section class="sec contact" id="kontak">
+        <div class="wrap">
+          <div class="sec__head">
+            <span class="eyebrow" data-reveal>Kontak</span>
+          </div>
+          <h2
+            class="contact__title"
+            id="cTitle"
+            data-split="free"
+            aria-label="Mari hadirkan sesuatu yang bergerak."
+          >
+            <span class="ln">Mari hadirkan</span>
+            <span class="ln">sesuatu yang</span>
+            <span class="ln"><em>bergerak.</em></span>
+          </h2>
+          <div class="contact__row">
+            <div class="mail" data-reveal>
+              <p class="lead">
+                Punya produk yang perlu terasa lebih hidup? Ceritakan singkat
+                konteksnya, saya balas dalam 24 jam kerja.
+              </p>
+              <a class="mail__addr" id="mailAddr" href="imajinerdunia@gmail.com"
+                >imajinerdunia@gmail.com</a
+              >
+              <div class="mail__act">
+                <button
+                  class="btn btn--primary"
+                  id="copyMail"
+                  type="button"
+                  data-magnet
+                >
+                  <span class="btn__t">Salin email</span>
+                </button>
+                <span class="mono" style="color: var(--ink-2)"
+                  >Jika tautan email tidak terbuka, salin alamatnya.</span
+                >
+              </div>
+            </div>
+            <nav
+              class="socials"
+              data-reveal
+              style="--d: 1"
+              aria-label="Profil daring"
+            >
+              <a href="https://github.com/CMFSA2" target="_blank" rel="noopener"
+                >GitHub
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" /></svg
+              ></a>
+              <a
+                href="https://www.instagram.com/quantum_utopian?utm_source=ig_web_button_share_sheet&cplk=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener"
+                >Instagram
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" /></svg
+              ></a>
+              <a
+                href="https://wa.me/6285157772261"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" /></svg
+              ></a>
+              <!--a href="https://www.instagram.com" target="_blank" rel="noopener"
+                >Instagram
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" /></svg
+              ></a-->
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot__in mono">
+        <span
+          >© 2026 Christian Marlen Firuli Simarmata. Salus Animarum Suprema
+          Lex.</span
+        >
+        <span>Bengkulu · <span data-clock>--:--:--</span> WIB</span>
+        <span>Dibuat dengan kode, tanpa template</span>
+        <button class="totop mono" id="toTop" type="button">
+          Kembali ke atas
+          <span class="icon-btn"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7" /></svg
+          ></span>
+        </button>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
